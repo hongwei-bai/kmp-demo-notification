@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.example.kmpdemo.notification.showNotification
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -22,7 +23,10 @@ fun App() {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = { showContent = !showContent }) {
+            Button(onClick = {
+                showNotification("Hello Compose!", "Hello Compose!")
+                showContent = !showContent
+            }) {
                 Text("Click me!")
             }
             AnimatedVisibility(showContent) {
