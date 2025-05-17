@@ -1,15 +1,82 @@
-CREATE TABLE Item (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
-    created_at INTEGER NOT NULL
+CREATE TABLE t_data (
+    _id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    local_name TEXT NOT NULL,
+    display_name TEXT NOT NULL,
+    key1 TEXT,
+    key2 TEXT,
+    key3 TEXT,
+    produce TEXT,
+    star INTEGER,
+    review INTEGER,
+    like INTEGER,
+    dislike INTEGER,
+    characters TEXT,
+    date_added TEXT,
+    year_added TEXT,
+    date_updated TEXT,
+    date_produced TEXT,
+    year_produced TEXT,
+    month_produced TEXT,
+    time_stamp_added TEXT,
+    time_stamp_updated TEXT,
+    time_stamp_produced TEXT,
+    series TEXT,
+    season TEXT,
+    continent TEXT,
+    area TEXT,
+    country TEXT,
+    city TEXT,
+    poi TEXT,
+    director TEXT,
+    languages TEXT,
+    last_play TEXT,
+    camera TEXT,
+    duration INTEGER,
+    resolution TEXT,
+    resolution_type TEXT,
+    parent_folder1 TEXT,
+    parent_folder2 TEXT,
+    parent_folder3 TEXT,
+    path TEXT NOT NULL,
+    disk TEXT NOT NULL,
+    cover_src TEXT,
+    size INTEGER,
+    format TEXT,
+    alpha_beta TEXT NOT NULL,
+    video_cnt INTEGER,
+    image_cnt INTEGER,
+    subtitle TEXT,
+    labels TEXT,
+    buffer_path TEXT,
+    wishlist INTEGER,
+    watched INTEGER,
+    deleted INTEGER,
+    date_import TEXT,
+    import_id INTEGER,
+    type TEXT,
+    subtype TEXT,
+    episode INTEGER
 );
 
-createItem:
-INSERT INTO Item(title, created_at)
-VALUES (?, ?);
+insertTData:
+INSERT INTO t_data (
+    local_name, display_name, key1, key2, key3, produce, star, review, like, dislike,
+    characters, date_added, year_added, date_updated, date_produced, year_produced, month_produced,
+    time_stamp_added, time_stamp_updated, time_stamp_produced, series, season, continent, area,
+    country, city, poi, director, languages, last_play, camera, duration, resolution,
+    resolution_type, parent_folder1, parent_folder2, parent_folder3, path, disk, cover_src,
+    size, format, alpha_beta, video_cnt, image_cnt, subtitle, labels, buffer_path,
+    wishlist, watched, deleted, date_import, import_id, type, subtype, episode
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+          ?, ?, ?, ?, ?, ?, ?,
+          ?, ?, ?, ?, ?, ?, ?,
+          ?, ?, ?, ?, ?, ?, ?, ?, ?,
+          ?, ?, ?, ?, ?, ?, ?,
+          ?, ?, ?, ?, ?, ?, ?, ?,
+          ?, ?, ?, ?, ?, ?, ?, ?);
 
-getAllItems:
-SELECT * FROM Item ORDER BY created_at DESC;
+getAllTData:
+SELECT * FROM t_data;
 
-deleteItem:
-DELETE FROM Item WHERE id = ?;
+deleteTDataById:
+DELETE FROM t_data WHERE _id = ?;
