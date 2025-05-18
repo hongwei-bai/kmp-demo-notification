@@ -1,15 +1,18 @@
-package com.example.kmpdemo.notification
+package com.example.kmpdemo.permission
 
+import android.Manifest
 import android.app.Activity
 import android.app.AlarmManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import android.provider.Settings
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 
 object AndroidPermissionHelper {
     private const val NOTIFICATION_PERMISSION_REQUEST_CODE = 1001
@@ -18,7 +21,7 @@ object AndroidPermissionHelper {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             ContextCompat.checkSelfPermission(
                 activity,
-                android.Manifest.permission.POST_NOTIFICATIONS
+                Manifest.permission.POST_NOTIFICATIONS
             ) == PackageManager.PERMISSION_GRANTED
         } else {
             true // Automatically granted on lower versions
@@ -29,7 +32,7 @@ object AndroidPermissionHelper {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             ActivityCompat.requestPermissions(
                 activity,
-                arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
                 NOTIFICATION_PERMISSION_REQUEST_CODE
             )
         }
@@ -53,19 +56,22 @@ object AndroidPermissionHelper {
      * then directs user to the system settings screen to grant it.
      */
     fun promptExactAlarmPermission(activity: Activity) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            AlertDialog.Builder(activity)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            android.app.AlertDialog.Builder(activity)
                 .setTitle("Allow Exact Alarm Permission")
-                .setMessage("To ensure notifications work correctly even when the app is in the background, please allow exact alarms.")
+                .setMessage("To ensure alarms work precisely even when the app is in the background, please allow exact alarms in settings.")
                 .setPositiveButton("Go to Settings") { _, _ ->
                     try {
                         val intent = Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM)
+                        // This opens your app's specific permission screen directly
+                        intent.data = "package:${activity.packageName}".toUri()
                         activity.startActivity(intent)
                     } catch (e: Exception) {
-                        // Fallback: open app details settings
-                        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                        intent.data = android.net.Uri.parse("package:" + activity.packageName)
-                        activity.startActivity(intent)
+                        // Robust fallback: open full app settings directly
+                        val fallbackIntent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+                            data = "package:${activity.packageName}".toUri()
+                        }
+                        activity.startActivity(fallbackIntent)
                     }
                 }
                 .setNegativeButton("Cancel", null)
