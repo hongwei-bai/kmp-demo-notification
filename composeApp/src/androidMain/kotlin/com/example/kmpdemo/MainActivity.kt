@@ -3,11 +3,13 @@ package com.example.kmpdemo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import com.example.kmpdemo.domain.SomeUseCase
 import com.example.kmpdemo.permission.AndroidPermissionHelper
+import org.koin.android.ext.android.get
 
 class MainActivity : ComponentActivity() {
+    private val someUseCase = get<SomeUseCase>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -20,13 +22,7 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
-            App()
+            App(someUseCase)
         }
     }
-}
-
-@Preview
-@Composable
-fun AppAndroidPreview() {
-    App()
 }

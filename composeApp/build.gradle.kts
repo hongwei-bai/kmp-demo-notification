@@ -39,9 +39,9 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.sqldelight.android.driver)
             implementation(libs.koin.android)
-            implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-            implementation("androidx.lifecycle:lifecycle-common-java8:2.7.0")
-            implementation("androidx.lifecycle:lifecycle-process:2.7.0")
+            implementation(libs.androidx.lifecycle.runtime.ktx)
+            implementation(libs.androidx.lifecycle.common.java8)
+            implementation(libs.androidx.lifecycle.process)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -54,6 +54,8 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.sqldelight.runtime)
             implementation(libs.koin.core)
+            // Koin for Compose Multiplatform - It doesn't support iOS
+//            implementation("io.insert-koin:koin-compose:1.0.1")
             implementation(libs.coroutines.core)
         }
         desktopMain.dependencies {

@@ -6,6 +6,6 @@ class MyRepository(
     private val dbHelper: DatabaseHelper
 ) {
     fun test() {
-        // use dbHelper here
+        println("test run!")
     }
 }
