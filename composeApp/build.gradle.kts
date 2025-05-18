@@ -39,6 +39,9 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.sqldelight.android.driver)
             implementation(libs.koin.android)
+            implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+            implementation("androidx.lifecycle:lifecycle-common-java8:2.7.0")
+            implementation("androidx.lifecycle:lifecycle-process:2.7.0")
         }
         commonMain.dependencies {
             implementation(compose.runtime)

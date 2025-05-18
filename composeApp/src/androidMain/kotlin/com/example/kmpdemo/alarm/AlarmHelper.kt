@@ -17,26 +17,20 @@ import java.time.ZoneId
 import java.util.Calendar
 
 
-class AlarmHelper {
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun setAlarm(context: Context, dateStr: String, timeStr: String) {
-        val ldt = LocalDateTime.of(LocalDate.parse(dateStr), LocalTime.parse(timeStr))
-        val instant: Instant = ldt.atZone(ZoneId.systemDefault()).toInstant()
-        AlarmHelper().setAlarm(context, instant)
-    }
-
+class AlarmHelper(val context: Context) {
     /**
      * Schedule alarm using a timestamp in milliseconds.
      */
     @SuppressLint("ScheduleExactAlarm")
     @RequiresPermission(android.Manifest.permission.SCHEDULE_EXACT_ALARM)
-    fun setAlarm(context: Context, timestampMillis: Long) {
+    fun setAlarm(timestampMillis: Long, title: String, message: String) {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val pendingIntent = createAlarmPendingIntent(context)
+        val pendingIntent = createAlarmPendingIntent(context, title, message)
+        val triggerAtMillis = System.currentTimeMillis() + timestampMillis
 
         alarmManager.setExactAndAllowWhileIdle(
             AlarmManager.RTC_WAKEUP,
-            timestampMillis,
+            triggerAtMillis,
             pendingIntent
         )
     }
@@ -44,17 +38,20 @@ class AlarmHelper {
     /**
      * Cancel any existing alarm with the predefined request code.
      */
-    fun cancelAlarm(context: Context) {
+    fun cancelAlarm(title: String, message: String) {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val pendingIntent = createAlarmPendingIntent(context)
+        val pendingIntent = createAlarmPendingIntent(context, title, message)
         alarmManager.cancel(pendingIntent)
     }
 
     /**
      * Create a consistent PendingIntent used for setting and canceling alarms.
      */
-    private fun createAlarmPendingIntent(context: Context): PendingIntent {
-        val intent = Intent(context, AlarmReceiver::class.java)
+    private fun createAlarmPendingIntent(context: Context, title: String, message: String): PendingIntent {
+        val intent = Intent(context, AlarmReceiver::class.java).apply {
+            putExtra("EXTRA_TITLE", title)
+            putExtra("EXTRA_MESSAGE", message)
+        }
         return PendingIntent.getBroadcast(
             context,
             ALARM_REQUEST_CODE,
@@ -64,7 +61,7 @@ class AlarmHelper {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun setAlarm(context: Context, time: Instant) {
+    private fun setAlarm(context: Context, time: Instant, title: String, message: String) {
         with(context) {
             val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
             val alarmIntent = Intent(this, AlarmReceiver::class.java)
