@@ -11,12 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9aea6ce5-86af-4c91-b936-fd5f0cfcf4eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/androidMain/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/androidMain/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/alarm/AlarmHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/alarm/AlarmHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/alarm/AlarmReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/alarm/AlarmReceiver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/di/PlatformModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/di/PlatformModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/notification/AndroidPermissionHelper.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,10 +97,11 @@
       <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\kotlin\com\example\kmpdemo\notification" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.example.kmpdemo.permission" />
       <recent name="com.example.kmpdemo.alarm" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.main [desktop]">
+  <component name="RunManager" selected="Gradle.android [composeApp:installDebug]">
     <configuration name="kmp-compose-demo.composeApp" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="kmp-compose-demo.composeApp" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -242,7 +239,7 @@
       <workItem from="1747482850056" duration="6992000" />
       <workItem from="1747493314135" duration="2401000" />
       <workItem from="1747548968599" duration="1758000" />
-      <workItem from="1747555373308" duration="10351000" />
+      <workItem from="1747555373308" duration="11053000" />
     </task>
     <servers />
   </component>
