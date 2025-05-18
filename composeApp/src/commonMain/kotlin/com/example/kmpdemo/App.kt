@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.kmpdemo.alarm.AlarmSetter
+import com.example.kmpdemo.domain.SomeUseCase
 import com.example.kmpdemo.notification.Notification.showNotification
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -22,7 +23,7 @@ import kmp_compose_demo.composeapp.generated.resources.compose_multiplatform
 
 @Composable
 @Preview
-fun App() {
+fun App(useCase: SomeUseCase) {
     MaterialTheme {
         val lifecycle = remember { _root_ide_package_.com.example.kmpdemo.lifecycle.AppLifecycle() }
         LaunchedEffect(Unit) {
@@ -68,6 +69,14 @@ fun App() {
                     AlarmSetter.cancelAlarm("Delayed alarm", "It's ringing!!")
                 }) {
                 Text("Cancel alarm")
+            }
+
+            Spacer(Modifier.height(24.dp))
+            Button(
+                onClick = {
+                    useCase.runTest()
+                }) {
+                Text("run use case")
             }
         }
     }

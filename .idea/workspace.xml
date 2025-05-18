@@ -11,8 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9aea6ce5-86af-4c91-b936-fd5f0cfcf4eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composeApp/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/notification/AndroidPermissionHelper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/data/MyRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/data/MyRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composeApp/src/desktopMain/kotlin/com/example/kmpdemo/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/desktopMain/kotlin/com/example/kmpdemo/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +243,10 @@
       <workItem from="1747482850056" duration="6992000" />
       <workItem from="1747493314135" duration="2401000" />
       <workItem from="1747548968599" duration="1758000" />
-      <workItem from="1747555373308" duration="11053000" />
+      <workItem from="1747555373308" duration="12600000" />
+      <workItem from="1747602129838" duration="55000" />
+      <workItem from="1747602778392" duration="73000" />
+      <workItem from="1747603674774" duration="829000" />
     </task>
     <servers />
   </component>
