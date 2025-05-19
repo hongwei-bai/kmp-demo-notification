@@ -38,6 +38,8 @@ fun App(useCase: SomeUseCase) {
         }
 
         var showContent by remember { mutableStateOf(false) }
+        var message by remember { mutableStateOf("") }
+
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Spacer(Modifier.height(128.dp))
             Button(
@@ -55,29 +57,52 @@ fun App(useCase: SomeUseCase) {
                 }
             }
 
-            Spacer(Modifier.height(24.dp))
+            Spacer(Modifier.height(8.dp))
             Button(
                 onClick = {
                     AlarmSetter.setAlarm(2000, "Delayed alarm", "It's ringing!!")
+                    message = "Set delayed alarm"
                 }) {
                 Text("Alarm in 2 seconds")
             }
 
-            Spacer(Modifier.height(24.dp))
+            Spacer(Modifier.height(8.dp))
             Button(
                 onClick = {
                     AlarmSetter.cancelAlarm("Delayed alarm", "It's ringing!!")
+                    message = "Alarm cancelled"
                 }) {
                 Text("Cancel alarm")
             }
 
-            Spacer(Modifier.height(24.dp))
+            Spacer(Modifier.height(8.dp))
             Button(
                 onClick = {
-                    useCase.runTest()
+                    useCase.addUser("Mike", 18)
+                    message = "user Mike added."
                 }) {
-                Text("run use case")
+                Text("Add user")
             }
+
+            Spacer(Modifier.height(8.dp))
+            Button(
+                onClick = {
+                    message = "user name is: ${useCase.getUserName()}"
+                }) {
+                Text("Get user")
+            }
+
+            Spacer(Modifier.height(8.dp))
+            Button(
+                onClick = {
+                    useCase.clearAllUsers()
+                    message = "user cleared"
+                }) {
+                Text("Clear user")
+            }
+
+            Spacer(Modifier.height(8.dp))
+            Text(text = message)
         }
     }
 }

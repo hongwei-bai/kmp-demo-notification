@@ -1,0 +1,32 @@
+-- DemoTable.sq
+
+CREATE TABLE DemoTable (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    age INTEGER NOT NULL,
+    description TEXT
+);
+
+insert:
+INSERT INTO DemoTable(id, name, age, description)
+VALUES (?, ?, ?, ?);
+
+delete:
+DELETE FROM DemoTable
+WHERE id = ?;
+
+update:
+UPDATE DemoTable
+SET name = ?, age = ?, description = ?
+WHERE id = ?;
+
+clearAll:
+DELETE FROM DemoTable;
+
+getRecordById:
+SELECT * FROM DemoTable
+WHERE id = ?;
+
+getRecordByName:
+SELECT * FROM DemoTable
+WHERE name = ?;
