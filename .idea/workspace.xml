@@ -11,13 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9aea6ce5-86af-4c91-b936-fd5f0cfcf4eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/androidMain/kotlin/com/example/kmpdemo/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/data/MyRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/data/MyRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/database/DatabaseHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/database/DatabaseHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/domain/SomeUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/domain/SomeUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/sqldelight/com/example/kmpdemo/database/AppDatabase.sq" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/desktopMain/kotlin/com/example/kmpdemo/database/DesktopDriverFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/desktopMain/kotlin/com/example/kmpdemo/database/DesktopDriverFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/di/AppModule.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,31 +65,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.kmp-compose-demo.composeApp.executor": "Run",
-    "Gradle.Build kmp-demo-notification.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.android [composeApp:installDebug].executor": "Run",
-    "Gradle.kmp-compose-demo [composeApp:wasmJsBrowserRun].executor": "Run",
-    "Gradle.main [desktop].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/code/kmp/kmp-demo-notification/composeApp/src/commonMain/sqldelight/com/example/kmpdemo/database",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.28045976",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.kmp-compose-demo.composeApp.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build kmp-demo-notification.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.android [composeApp:installDebug].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.kmp-compose-demo [composeApp:wasmJsBrowserRun].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.main [desktop].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/code/kmp/kmp-demo-notification/composeApp/src/commonMain/sqldelight/com/example/kmpdemo/database&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.28045976&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\sqldelight\com\example\kmpdemo\database" />
@@ -103,6 +98,9 @@
       <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\kotlin\com\example\kmpdemo\notification" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.example.kmpdemo.ui.util" />
+      <recent name="com.example.kmpdemo.ui." />
+      <recent name="com.example.kmpdemo.ui.base" />
       <recent name="com.example.kmpdemo.permission" />
       <recent name="com.example.kmpdemo.alarm" />
     </key>
@@ -226,6 +224,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SwiftWorkspaceSettings">
+    <option name="detectedToolchain" value="true" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9aea6ce5-86af-4c91-b936-fd5f0cfcf4eb" name="Changes" comment="" />
@@ -251,7 +252,12 @@
       <workItem from="1747603674774" duration="1152000" />
       <workItem from="1747609591889" duration="548000" />
       <workItem from="1747611633947" duration="1321000" />
-      <workItem from="1747656331045" duration="3429000" />
+      <workItem from="1747656331045" duration="4682000" />
+      <workItem from="1747665405588" duration="642000" />
+      <workItem from="1747702253363" duration="3241000" />
+      <workItem from="1747736416415" duration="3434000" />
+      <workItem from="1747741872698" duration="2617000" />
+      <workItem from="1747892864905" duration="8352000" />
     </task>
     <servers />
   </component>
