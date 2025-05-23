@@ -19,6 +19,7 @@ import com.example.kmpdemo.alarm.AlarmSetter
 import com.example.kmpdemo.domain.SomeUseCase
 import com.example.kmpdemo.notification.Notification.showNotification
 import com.example.kmpdemo.ui.CounterViewModel
+import com.example.kmpdemo.ui.theme.MyAppTheme
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import kmp_compose_demo.composeapp.generated.resources.Res
@@ -29,7 +30,7 @@ import org.koin.mp.KoinPlatform.getKoin
 @Preview
 fun App(useCase: SomeUseCase) {
     val viewModel: CounterViewModel = getKoin().get()
-    MaterialTheme {
+    MyAppTheme {
         val lifecycle = remember { _root_ide_package_.com.example.kmpdemo.lifecycle.AppLifecycle() }
         LaunchedEffect(Unit) {
             lifecycle.observeLifecycle(
