@@ -11,8 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9aea6ce5-86af-4c91-b936-fd5f0cfcf4eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composeApp/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/di/AppModule.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +78,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/code/kmp/kmp-demo-notification/composeApp/src/commonMain/sqldelight/com/example/kmpdemo/database&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/code/kmp/kmp-demo-notification/composeApp/src/androidMain/res/fonts&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -92,10 +92,16 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\androidMain\res\fonts" />
+      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\desktopMain" />
+      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\kotlin\com\example\kmpdemo\ui\theme" />
       <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\sqldelight\com\example\kmpdemo\database" />
       <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\androidMain\kotlin\com\example\kmpdemo\notification" />
-      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\androidMain\kotlin\com\example\kmpdemo\alarm" />
-      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\kotlin\com\example\kmpdemo\notification" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\composeResources" />
+      <recent name="D:\code\kmp\kmp-demo-notification\iosApp\Resources\Fonts" />
+      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\resources\font" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="com.example.kmpdemo.ui.util" />
@@ -105,7 +111,7 @@
       <recent name="com.example.kmpdemo.alarm" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.android [composeApp:installDebug]">
+  <component name="RunManager" selected="Gradle.main [desktop]">
     <configuration name="kmp-compose-demo.composeApp" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="kmp-compose-demo.composeApp" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -257,7 +263,9 @@
       <workItem from="1747702253363" duration="3241000" />
       <workItem from="1747736416415" duration="3434000" />
       <workItem from="1747741872698" duration="2617000" />
-      <workItem from="1747892864905" duration="8352000" />
+      <workItem from="1747892864905" duration="10357000" />
+      <workItem from="1748014593061" duration="2783000" />
+      <workItem from="1748042828213" duration="904000" />
     </task>
     <servers />
   </component>
