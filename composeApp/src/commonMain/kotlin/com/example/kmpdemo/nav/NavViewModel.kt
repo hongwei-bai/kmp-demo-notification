@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class NavViewModel() {
-    private val _currentScreen = MutableStateFlow<Screen>(Screen.Home)
+    private val _currentScreen = MutableStateFlow<Screen>(Screen.Colors)
     val currentScreen: StateFlow<Screen> = _currentScreen
 
     private val _selectedTabIndex = MutableStateFlow(0)

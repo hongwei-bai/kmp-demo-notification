@@ -1,27 +1,23 @@
 package com.example.kmpdemo
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Create
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.runtime.*
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.kmpdemo.domain.SomeUseCase
 import com.example.kmpdemo.nav.NavViewModel
 import com.example.kmpdemo.nav.Screen
 import com.example.kmpdemo.nav.tabScreens
-import com.example.kmpdemo.ui.DetailsScreen
-import com.example.kmpdemo.ui.HomeScreen
-import com.example.kmpdemo.ui.SettingsScreen
+import com.example.kmpdemo.ui.*
 import com.example.kmpdemo.ui.theme.MyAppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.mp.KoinPlatform.getKoin
@@ -46,10 +42,28 @@ fun App(useCase: SomeUseCase) {
                             icon = { Icon(Icons.Default.Home, contentDescription = null) }
                         )
                         BottomNavigationItem(
-                            selected = currentScreen is Screen.Settings,
-                            onClick = { navViewModel.navigate(Screen.Settings) },
-                            label = { Text("Settings") },
-                            icon = { Icon(Icons.Default.Settings, contentDescription = null) }
+                            selected = currentScreen is Screen.Colors,
+                            onClick = { navViewModel.navigate(Screen.Colors) },
+                            label = { Text("Colors") },
+                            icon = { Icon(Icons.Default.Star, contentDescription = null) }
+                        )
+                        BottomNavigationItem(
+                            selected = currentScreen is Screen.Fonts,
+                            onClick = { navViewModel.navigate(Screen.Fonts) },
+                            label = { Text("Fonts") },
+                            icon = { Icon(Icons.Default.Favorite, contentDescription = null) }
+                        )
+                        BottomNavigationItem(
+                            selected = currentScreen is Screen.Typography,
+                            onClick = { navViewModel.navigate(Screen.Typography) },
+                            label = { Text("Typography") },
+                            icon = { Icon(Icons.Default.Create, contentDescription = null) }
+                        )
+                        BottomNavigationItem(
+                            selected = currentScreen is Screen.Icons,
+                            onClick = { navViewModel.navigate(Screen.Icons) },
+                            label = { Text("Icons") },
+                            icon = { Icon(Icons.Default.Info, contentDescription = null) }
                         )
                     }
                 }
@@ -87,7 +101,10 @@ private fun ScreensContent(currentScreen: Screen, navViewModel: NavViewModel, us
             navViewModel.navigate(Screen.Details("item-123"))
         })
 
-        is Screen.Settings -> SettingsScreen(onBack = { navViewModel.goBack() })
+        is Screen.Colors -> ColorsScreen()
+        is Screen.Typography -> TypographyScreen()
+        is Screen.Fonts -> FontsScreen()
+        is Screen.Icons -> IconsScreen()
         is Screen.Details -> DetailsScreen(itemId = currentScreen.itemId, onBack = { navViewModel.goBack() })
     }
 }
