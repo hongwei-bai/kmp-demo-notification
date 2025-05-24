@@ -21,6 +21,7 @@ lifecycleProcess = "2.7.0"
 sqldelight = "2.0.1"
 koin = "3.5.3"
 coroutines = "1.7.3"
+foundationLayoutAndroid = "1.8.2"
 
 [libraries]
 androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycleProcess" }
@@ -47,6 +48,7 @@ sqlite-dialect = { module = "app.cash.sqldelight:sqlite-3-18-dialect", version.r
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+androidx-foundation-layout-android = { group = "androidx.compose.foundation", name = "foundation-layout-android", version.ref = "foundationLayoutAndroid" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

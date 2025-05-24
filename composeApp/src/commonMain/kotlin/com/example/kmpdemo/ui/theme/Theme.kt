@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
-// Enhanced base theme with better contrast and modern colors
 private val LightColors = lightColors(
     primary = Color(0xFF6366F1),        // Modern indigo
     primaryVariant = Color(0xFF4338CA),  // Darker indigo
