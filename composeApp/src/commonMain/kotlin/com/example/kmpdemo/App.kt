@@ -1,139 +1,93 @@
 package com.example.kmpdemo
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.kmpdemo.alarm.AlarmSetter
 import com.example.kmpdemo.domain.SomeUseCase
-import com.example.kmpdemo.notification.Notification.showNotification
-import com.example.kmpdemo.ui.CounterViewModel
+import com.example.kmpdemo.nav.NavViewModel
+import com.example.kmpdemo.nav.Screen
+import com.example.kmpdemo.nav.tabScreens
+import com.example.kmpdemo.ui.DetailsScreen
+import com.example.kmpdemo.ui.HomeScreen
+import com.example.kmpdemo.ui.SettingsScreen
 import com.example.kmpdemo.ui.theme.MyAppTheme
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import kmp_compose_demo.composeapp.generated.resources.Res
-import kmp_compose_demo.composeapp.generated.resources.compose_multiplatform
 import org.koin.mp.KoinPlatform.getKoin
 
 @Composable
 @Preview
 fun App(useCase: SomeUseCase) {
-    val viewModel: CounterViewModel = getKoin().get()
+    val navViewModel: NavViewModel = getKoin().get()
+    val currentScreen by navViewModel.currentScreen.collectAsState()
+    val selectedTabIndex by navViewModel.selectedTabIndex.collectAsState()
+    val isDesktop = getPlatform().name.startsWith("Java")
+
     MyAppTheme {
-        val lifecycle = remember { _root_ide_package_.com.example.kmpdemo.lifecycle.AppLifecycle() }
-        LaunchedEffect(Unit) {
-            lifecycle.observeLifecycle(
-                onEnterForeground = {
-                    println("🌞 App entered foreground")
-                },
-                onEnterBackground = {
-                    println("🌚 App entered background")
+        Scaffold(
+            bottomBar = {
+                if (!isDesktop) {
+                    BottomNavigation {
+                        BottomNavigationItem(
+                            selected = currentScreen is Screen.Home,
+                            onClick = { navViewModel.navigate(Screen.Home) },
+                            label = { Text("Home") },
+                            icon = { Icon(Icons.Default.Home, contentDescription = null) }
+                        )
+                        BottomNavigationItem(
+                            selected = currentScreen is Screen.Settings,
+                            onClick = { navViewModel.navigate(Screen.Settings) },
+                            label = { Text("Settings") },
+                            icon = { Icon(Icons.Default.Settings, contentDescription = null) }
+                        )
+                    }
                 }
-            )
+            }
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(WindowInsets.statusBars.asPaddingValues())
+            ) {
+                if (isDesktop) {
+                    TabRow(selectedTabIndex = selectedTabIndex) {
+                        tabScreens.forEachIndexed { index, screen ->
+                            Tab(
+                                text = { Text(screen.title) },
+                                selected = selectedTabIndex == index,
+                                onClick = { navViewModel.selectTab(index) }
+                            )
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+                }
+
+                ScreensContent(currentScreen, navViewModel, useCase)
+            }
         }
+    }
+}
 
-        var showContent by remember { mutableStateOf(false) }
-        var message by remember { mutableStateOf("") }
-        val count by viewModel.count.collectAsState(0)
+@Composable
+private fun ScreensContent(currentScreen: Screen, navViewModel: NavViewModel, useCase: SomeUseCase) {
+    when (currentScreen) {
+        is Screen.Home -> HomeScreen(useCase = useCase, onNavigateToDetails = {
+            navViewModel.navigate(Screen.Details("item-123"))
+        })
 
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Spacer(Modifier.height(128.dp))
-            Button(
-                onClick = {
-                    showNotification("Hello Compose!", "Hello Compose!")
-                    showContent = !showContent
-                }) {
-                Text("Click me!")
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
-                }
-            }
-
-            Spacer(Modifier.height(8.dp))
-            Row {
-                Button(
-                    onClick = {
-                        AlarmSetter.setAlarm(2000, "Delayed alarm", "It's ringing!!")
-                        message = "Set delayed alarm"
-                    }) {
-                    Text("Alarm in 2s")
-                }
-
-                Spacer(Modifier.width(8.dp))
-                Button(
-                    onClick = {
-                        AlarmSetter.cancelAlarm("Delayed alarm", "It's ringing!!")
-                        message = "Alarm cancelled"
-                    }) {
-                    Text("Cancel alarm")
-                }
-            }
-
-            Spacer(Modifier.height(8.dp))
-            Row {
-                Button(
-                    onClick = {
-                        useCase.addUser("Mike", 18)
-                        message = "user Mike added."
-                    }) {
-                    Text("Add user")
-                }
-
-                Spacer(Modifier.width(8.dp))
-                Button(
-                    onClick = {
-                        message = "user name is: ${useCase.getUserName()}"
-                    }) {
-                    Text("Get")
-                }
-
-                Spacer(Modifier.width(8.dp))
-                Button(
-                    onClick = {
-                        useCase.clearAllUsers()
-                        message = "user cleared"
-                    }) {
-                    Text("Clear")
-                }
-            }
-
-            Spacer(Modifier.height(8.dp))
-            Text(text = message)
-
-            Row {
-                Button(
-                    onClick = {
-                        viewModel.increment()
-                    }) {
-                    Text("+1")
-                }
-
-                Spacer(Modifier.width(8.dp))
-                Button(
-                    onClick = {
-                        viewModel.decrement()
-                    }) {
-                    Text("-1")
-                }
-            }
-
-            Spacer(Modifier.height(8.dp))
-            Text(text = count.toString())
-        }
+        is Screen.Settings -> SettingsScreen(onBack = { navViewModel.goBack() })
+        is Screen.Details -> DetailsScreen(itemId = currentScreen.itemId, onBack = { navViewModel.goBack() })
     }
 }
