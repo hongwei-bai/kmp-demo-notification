@@ -11,15 +11,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9aea6ce5-86af-4c91-b936-fd5f0cfcf4eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composeApp/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/composeApp/src/commonMain/kotlin/com/example/kmpdemo/di/AppModule.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=31311FDH2000M8)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Mike.DESKTOP-BDA4L9K\.android\avd\Pixel_7_API_35.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -65,38 +65,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.kmp-compose-demo.composeApp.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build kmp-demo-notification.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.android [composeApp:installDebug].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.kmp-compose-demo [composeApp:wasmJsBrowserRun].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.main [desktop].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/code/kmp/kmp-demo-notification/composeApp/src/androidMain/res/fonts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.28045976&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.kmp-compose-demo.composeApp.executor": "Run",
+    "Gradle.Build kmp-demo-notification.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.android [composeApp:installDebug].executor": "Run",
+    "Gradle.kmp-compose-demo [composeApp:wasmJsBrowserRun].executor": "Run",
+    "Gradle.main [desktop].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/code/kmp/kmp-demo-notification/composeApp/src/nativeMain",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.28045976",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\androidMain\res\fonts" />
-      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\desktopMain" />
-      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\kotlin\com\example\kmpdemo\ui\theme" />
-      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\sqldelight\com\example\kmpdemo\database" />
-      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\androidMain\kotlin\com\example\kmpdemo\notification" />
+      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\nativeMain" />
+      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\iosMain" />
+      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\desktopMain\kotlin" />
+      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\androidMain\kotlin\com\example\kmpdemo" />
+      <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\kotlin\com\example\kmpdemo\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\code\kmp\kmp-demo-notification\composeApp\src\commonMain\composeResources" />
@@ -111,7 +111,7 @@
       <recent name="com.example.kmpdemo.alarm" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.main [desktop]">
+  <component name="RunManager" selected="Gradle.android [composeApp:installDebug]">
     <configuration name="kmp-compose-demo.composeApp" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="kmp-compose-demo.composeApp" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -265,7 +265,8 @@
       <workItem from="1747741872698" duration="2617000" />
       <workItem from="1747892864905" duration="10357000" />
       <workItem from="1748014593061" duration="2783000" />
-      <workItem from="1748042828213" duration="904000" />
+      <workItem from="1748042828213" duration="1329000" />
+      <workItem from="1748050792626" duration="5501000" />
     </task>
     <servers />
   </component>
