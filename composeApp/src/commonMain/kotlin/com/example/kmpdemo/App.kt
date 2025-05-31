@@ -17,6 +17,7 @@ import com.example.kmpdemo.domain.SomeUseCase
 import com.example.kmpdemo.nav.NavViewModel
 import com.example.kmpdemo.nav.Screen
 import com.example.kmpdemo.nav.tabScreens
+import com.example.kmpdemo.titlebar.DraggableTitleBar
 import com.example.kmpdemo.ui.*
 import com.example.kmpdemo.ui.theme.MyAppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -75,6 +76,7 @@ fun App(useCase: SomeUseCase) {
                     .padding(WindowInsets.statusBars.asPaddingValues())
             ) {
                 if (isDesktop) {
+                    DraggableTitleBar()
                     TabRow(selectedTabIndex = selectedTabIndex) {
                         tabScreens.forEachIndexed { index, screen ->
                             Tab(
